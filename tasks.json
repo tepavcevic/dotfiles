@@ -1,0 +1,47 @@
+[
+  {
+    "label": "Run Dev",
+    "command": "npm run dev",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  // {
+  //   "label": "Prisma Studio",
+  //   "command": "npx prisma studio",
+  //   "use_new_terminal": false,
+  //   "allow_concurrent_runs": false,
+  //   "reveal": "never"
+  // },
+  // {
+  //   "label": "Prisma Migrate Dev",
+  //   "command": "npx prisma migrate dev",
+  //   "use_new_terminal": false,
+  //   "allow_concurrent_runs": false,
+  //   "reveal": "always"
+  // },
+  // {
+  //   "label": "Playwright UI Test",
+  //   "command": "npx playwright test --ui",
+  //   "use_new_terminal": false,
+  //   "allow_concurrent_runs": false
+  // },
+  {
+    "label": "Git",
+    "command": "gitui",
+    "use_new_terminal": true,
+    "reveal": "always"
+  },
+  {
+    "label": "Precommit Check",
+    "command": "npm run ci:check",
+    "use_new_terminal": true,
+    "reveal": "always"
+  },
+  {
+    "label": "Run Watch",
+    "command": "npm run watch",
+    "use_new_terminal": false,
+    "reveal": "always",
+    "allow_concurrent_runs": false
+  }
+]
