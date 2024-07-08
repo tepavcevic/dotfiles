@@ -1,0 +1,95 @@
+[
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "h": "project_panel::CollapseSelectedEntry",
+      "l": "project_panel::ExpandSelectedEntry",
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrev",
+      "o": "menu::Confirm",
+      "r": "project_panel::Rename",
+      "z c": "project_panel::CollapseSelectedEntry",
+      "z o": "project_panel::ExpandSelectedEntry",
+      "shift-o": "project_panel::RevealInFinder",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Delete",
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory",
+      "shift-y": "project_panel::CopyRelativePath",
+      "g y": "project_panel::CopyPath",
+      "ctrl-e": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      // NAVIGATION
+      // switch b/w buffers
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePrevItem",
+      // splits
+      "space v": "pane::SplitRight",
+      "space s": "pane::SplitDown",
+      "space .": "editor::GoToDefinitionSplit",
+      // panes
+      "space h": ["workspace::ActivatePaneInDirection", "Left"],
+      "space l": ["workspace::ActivatePaneInDirection", "Right"],
+      "space k": ["workspace::ActivatePaneInDirection", "Up"],
+      "space j": ["workspace::ActivatePaneInDirection", "Down"],
+      // nice to have
+      "space w": "workspace::Save",
+      "space x": [
+        "pane::CloseActiveItem",
+        {
+          "saveIntent": "skip"
+        }
+      ],
+      "space q": [
+        "pane::CloseActiveItem",
+        {
+          "saveIntent": "saveAll"
+        }
+      ],
+      "space b o": ["workspace::SendKeystrokes", ": E enter"],
+      "space b c": "workspace::ToggleRightDock",
+      "space f": "editor::Format",
+      "space p": "file_finder::Toggle",
+      "space r": "projects::OpenRecent",
+      "space g b": "branches::OpenRecent",
+      "space g a": "editor::ToggleGitBlame",
+      "space g g": [
+        "task::Spawn",
+        {
+          "task_name": "Git"
+        }
+      ],
+      "space t s": "task::Spawn",
+      "space t r": "task::Rerun",
+      // terminal focus
+      "ctrl-shift-j": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
+    "bindings": {
+      "shift-s": [
+        "vim::PushOperator",
+        {
+          "AddSurrounds": {}
+        }
+      ]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-j": "workspace::ToggleBottomDock",
+      "ctrl-shift-n": "workspace::NewTerminal",
+      "ctrl-w": "pane::CloseActiveItem",
+      "ctrl-shift-a": "pane::ActivateNextItem",
+      "ctrl-shift-b": "pane::ActivatePrevItem"
+    }
+  }
+]
