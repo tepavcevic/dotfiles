@@ -1,0 +1,90 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=10
+set clipboard=unnamedplus,unnamed,ideaput
+
+set relativenumber
+set number
+
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set wrapscan
+set highlightedyank
+set multiple-cursors
+set commentary
+set surround
+set ideajoin
+set nerdtree
+
+let mapleader ="\<Space>"
+
+map <leader>p <Action>(GotoFile)
+map <leader>r <Action>($LRU)
+map <leader>gg <Action>(VcsGroups)
+map <leader>ga <Action>(Annotate)
+map <leader>gb <Action>(Git.Branches)
+
+" easy window navigation
+map <leader>l  <c-w>l
+map <leader>j <c-w>j
+map <leader>h <c-w>h
+map <leader>k <c-w>k
+map <leader>v <Action>(SplitVertically)
+map <leader>. <Action>(MoveTabRight)
+map <leader>, <Action>(MoveEditorToOppositeTabGroup)
+map <leader>s <Action>(SplitHorizontally)
+
+map L <Action>(NextTab)
+map H <Action>(PreviousTab)
+
+map <leader>x :x!<CR>
+map <leader>w :w<CR>
+map <leader>q :wq<CR>
+map <leader>f <Action>(Javascript.Linters.EsLint.Fix)<Action>(ReformatCode)
+map <leader>n :noh<CR>
+map <leader>b :NERDTreeToggle<CR>
+map <leader>ca <Action>(ShowIntentionActions)
+map <leader><leader>i <Action>(VimPluginToggle)
+" Annotate git blame
+map <leader>zc <Action>(CollapseAllRegions)
+map <leader>zo <Action>(ExpandAllRegions)
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" don't lose selection when indenting
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
+
+nmap <C-S-Down> :action EditorCloneCaretBelow<CR>
+nmap <C-S-Up> :action EditorCloneCaretAbove<CR>
+
+map gh <Action>(ShowErrorDescription)
+map g[ <Action>(GotoPreviousError)
+map g] <Action>(GotoNextError)
+map cd <Action>(RenameElement)
+
+map <C-S-J> <Action>(ActivateTerminalToolWindow)
+map <C-T> <Action>(ChangeView)
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"imap <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
