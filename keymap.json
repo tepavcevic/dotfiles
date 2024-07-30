@@ -10,7 +10,7 @@
       "r": "project_panel::Rename",
       "z c": "project_panel::CollapseSelectedEntry",
       "z o": "project_panel::ExpandSelectedEntry",
-      "shift-o": "project_panel::RevealInFinder",
+      "shift-o": "project_panel::RevealInFileManager",
       "x": "project_panel::Cut",
       "c": "project_panel::Copy",
       "p": "project_panel::Paste",
@@ -52,11 +52,12 @@
           "saveIntent": "saveAll"
         }
       ],
-      "space b o": ["workspace::SendKeystrokes", ": E enter"],
+      "space b b": ["workspace::SendKeystrokes", ": E enter"],
       "space b c": "workspace::ToggleRightDock",
       "space f": "editor::Format",
       "space p": "file_finder::Toggle",
       "space r": "projects::OpenRecent",
+      // git keybindings
       "space g b": "branches::OpenRecent",
       "space g a": "editor::ToggleGitBlame",
       "space g g": [
@@ -65,6 +66,8 @@
           "task_name": "Git"
         }
       ],
+      "space g r h": "editor::RevertSelectedHunks",
+      // task keybindings
       "space t s": "task::Spawn",
       "space t r": "task::Rerun",
       // terminal focus
